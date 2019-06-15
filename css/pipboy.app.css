@@ -1,0 +1,116 @@
+@font-face{
+    font-family: Pipboy;
+    src: url('../monofonto.ttf');
+}
+
+body{
+    font-family: Pipboy, sans-serif;
+    color: #14fe17;
+    background: #272b23;
+}
+
+body::after{
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .5) , rgba(0, 0, 0, .4) 1px, transparent 1px, transparent 2px);
+    opacity: .3;
+    z-index: 1000000;
+    pointer-events: none;
+}
+
+.navbar, .container-fluid{
+    border-bottom: 2px solid;
+    margin: 0px 10px;
+}
+
+
+.navbar::before, .navbar::after, .container-fluid::before, .container-fluid::after{
+    height: 7px;
+    width: 2px;
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 5000;
+    background: #14fe17;
+    bottom: -8px;
+}
+
+.navbar::before, .container-fluid::before{
+    left: 0px;
+}
+
+.navbar::after, .container-fluid::after{
+    right: 0px;
+}
+
+ul > li.nav-item > a.nav-link, ul > li.navbar-item.active > a.nav-link{
+    color: #14fe17 !important;
+    font-size: 32px;
+    line-height: 22px;
+    padding-bottom: 0px;
+}
+
+.navbar-item.active::before{
+    content: "";
+    position: absolute;
+    background: #f00;
+    width: 100%;
+    height: 22px;
+    top: 18px;
+    background: #272b23;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-top: 2px solid;
+}
+
+.navbar-light .navbar-nav > li.nav-item > .nav-link,
+.navbar-light .navbar-nav > li.navbar-item.active > .nav-link{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    font-size: 32px;
+    line-height: 22px;
+    padding-bottom: 0px;
+    z-index: 50;
+    position: relative;
+    background: #272b23;
+}
+
+.navbar-nav{
+    width: 100%;
+}
+
+.navbar-light ul.navbar-nav > li{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.center-image img{
+    margin: auto;
+    display: block;
+    position: relative;
+    max-height: 300px;
+    margin-top: 100px;
+    filter: grayscale(1) sepia(100%) hue-rotate(55deg) saturate(7) brightness(1) contrast(2);
+}
+
+.pip-footer{
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+
+.nav.nav-tabs{
+    margin: 20px;
+    border-bottom: none;
+}
+
+.nav.nav-tabs > .nav-item > .nav-link:hover{
+    border: 1px solid transparent;
+}
